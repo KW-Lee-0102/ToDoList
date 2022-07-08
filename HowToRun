@@ -1,0 +1,22 @@
+[Login Page]
+Please run it using browser: http://127.0.0.1:1234/
+
+[List all items]
+curl http://127.0.0.1:1234/Todo/List
+
+
+[List item by id]
+curl http://127.0.0.1:1234/Todo/List/<id> 
+	ie: curl http://127.0.0.1:1234/Todo/List/1
+
+[Create new item]
+curl -X POST -H "Content-Type: application/json" -d '<json content with id, task and status>' http://127.0.0.1:1234/Todo/Add
+
+ie:
+	curl -X POST -H "Content-Type: application/json" -d '{ "id":"1", "task":"This is a new task", "status":"Ready" }' http://127.0.0.1:1234/Todo/Add
+
+[Update existing item]
+curl -X PUT -H "Content-Type: application/json" -d '{ "id":"1", "task":"Updated Item", "status":"Completed" }' http://127.0.0.1:1234/Todo/Update
+
+[Delete item by Id]
+curl -X "DELETE" http://127.0.0.1:1234/Todo/List/1
